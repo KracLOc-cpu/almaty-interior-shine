@@ -59,8 +59,10 @@ const Portfolio = () => {
   const prev = useCallback(() => setCurrent((p) => (p - 1 + slides.length) % slides.length), []);
 
   useEffect(() => {
-    autoRef.current = setInterval(next, 5000);
-    return () => { if (autoRef.current) clearInterval(autoRef.current); };
+    const startTimeout = setTimeout(() => {
+      autoRef.current = setInterval(next, 5000);
+    }, 500);
+    return () => { clearTimeout(startTimeout); if (autoRef.current) clearInterval(autoRef.current); };
   }, [next]);
 
   const pauseAuto = () => {

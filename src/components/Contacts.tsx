@@ -1,8 +1,10 @@
-import { MapPin, Phone, Clock, Truck } from "lucide-react";
+import { MapPin, Phone, Clock, Truck, Map } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import { useState } from "react";
 
 const Contacts = () => {
   const { t } = useLang();
+  const [showMap, setShowMap] = useState(false);
 
   return (
     <section id="contacts" className="py-16 sm:py-20">
@@ -28,23 +30,37 @@ const Contacts = () => {
           </div>
         </div>
 
-        {/* Map — Жумабаева 192, Алматы */}
+        {/* Map area */}
         <div className="max-w-lg mx-auto rounded-xl overflow-hidden border border-border mb-4">
-          <iframe
-            src="https://www.google.com/maps?q=43.316966,76.920362&z=17&output=embed"
-            width="100%"
-            height="380"
-            style={{ border: 0, borderRadius: '16px' }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Карта"
-          />
+          {showMap ? (
+            <iframe
+              src="https://www.google.com/maps?q=43.316966,76.920362&z=17&output=embed"
+              width="100%"
+              height="380"
+              style={{ border: 0, borderRadius: '16px' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Карта"
+            />
+          ) : (
+            <div className="flex flex-col items-center justify-center bg-card text-center py-16 px-6" style={{ height: 380 }}>
+              <Map className="w-12 h-12 text-muted-foreground mb-4" />
+              <p className="text-foreground font-semibold mb-1 text-sm">{t("cont_address")}</p>
+              <p className="text-muted-foreground text-xs mb-6">Нажмите, чтобы открыть карту</p>
+              <button
+                onClick={() => setShowMap(true)}
+                className="w-full border border-border text-foreground font-semibold py-3 rounded-xl hover:bg-surface transition-colors text-sm"
+              >
+                Показать карту на сайте
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
           <a
-            href="https://maps.app.goo.gl/N6NpmfzmpbL9ygTf7"
+            href="https://maps.app.goo.gl/C2FSdcQ97rRj2ocp7"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 text-center border border-border text-foreground font-semibold py-3 rounded-xl hover:bg-surface transition-colors text-sm"
