@@ -53,6 +53,7 @@ const Reviews = () => {
 
   const [active, setActive] = useState(0);
   const pauseUntil = useRef(0);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const touchStartX = useRef(0);
 
   const goTo = useCallback((idx: number) => {
@@ -63,14 +64,20 @@ const Reviews = () => {
     pauseUntil.current = Date.now() + 8000;
   }, []);
 
-  // Auto-play
+  // Auto-play with delayed start
   useEffect(() => {
-    const id = setInterval(() => {
-      if (Date.now() > pauseUntil.current) {
-        setActive((prev) => (prev + 1) % count);
-      }
-    }, 4000);
-    return () => clearInterval(id);
+    const startTimeout = setTimeout(() => {
+      const id = setInterval(() => {
+        if (Date.now() > pauseUntil.current) {
+          setActive((prev) => (prev + 1) % count);
+        }
+      }, 4000);
+      intervalRef.current = id;
+    }, 500);
+    return () => {
+      clearTimeout(startTimeout);
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, [count]);
 
   const onTouchStart = (e: React.TouchEvent) => {
