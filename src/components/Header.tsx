@@ -22,12 +22,12 @@ const Header = () => {
       <div className="container px-5 h-12 flex items-center justify-between">
         <span className="font-bold text-foreground text-sm tracking-wide">ПЕРЕТЯЖКА</span>
         <div className="flex items-center gap-2">
-          <div className="flex gap-0.5 items-center">
-            <a href="https://www.instagram.com/almaty_peretyazhka" target="_blank" rel="noopener noreferrer" className="p-1.5 text-muted-foreground hover:text-foreground transition-colors">
-              <Instagram className="w-4 h-4" />
+          <div className="flex gap-1 items-center">
+            <a href="https://www.instagram.com/almaty_peretyazhka" target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-full bg-surface hover:bg-surface-hover text-foreground/70 hover:text-foreground transition-colors">
+              <Instagram className="w-[18px] h-[18px]" />
             </a>
-            <a href="https://www.tiktok.com/@peretyazhka11" target="_blank" rel="noopener noreferrer" className="p-1.5 text-muted-foreground hover:text-foreground transition-colors">
-              <TikTokIcon className="w-4 h-4" />
+            <a href="https://www.tiktok.com/@peretyazhka11" target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-full bg-surface hover:bg-surface-hover text-foreground/70 hover:text-foreground transition-colors">
+              <TikTokIcon className="w-[18px] h-[18px]" />
             </a>
           </div>
           <div className="flex gap-1 bg-surface rounded-lg p-0.5">
