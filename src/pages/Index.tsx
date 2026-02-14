@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Advantages from "@/components/Advantages";
 import Services from "@/components/Services";
@@ -12,6 +13,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Index = () => (
   <>
+    <Header />
     <Hero />
     <Advantages />
     <Services />
