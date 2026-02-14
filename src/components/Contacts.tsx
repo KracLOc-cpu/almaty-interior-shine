@@ -31,10 +31,10 @@ const Contacts = () => {
         {/* Map — Жумабаева 192, Алматы */}
         <div className="max-w-lg mx-auto rounded-xl overflow-hidden border border-border mb-4">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.5!2d76.8890!3d43.2800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836ea03f72e26d%3A0x5c3e2e12f4c1d8a5!2z0JbRg9C80LDQsdCw0LXQstCwIDE5Mg!5e0!3m2!1sru!2skz!4v1700000000000"
+            src="https://www.google.com/maps?q=43.316966,76.920362&z=17&output=embed"
             width="100%"
-            height="250"
-            style={{ border: 0 }}
+            height="380"
+            style={{ border: 0, borderRadius: '16px' }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
