@@ -30,14 +30,14 @@ const Hero = () => {
         playsInline
         preload="auto"
         onCanPlay={() => setVideoLoaded(true)}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 object-center md:object-center max-md:object-[center_40%] max-md:scale-[1.15] ${videoLoaded ? "opacity-100" : "opacity-0"}`}
         poster={heroBg}
       >
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-background/[0.65]" />
+      <div className="absolute inset-0 bg-background/[0.70] md:bg-background/[0.65]" />
 
       {/* Content with glass effect */}
       <div className="relative z-10 container px-5 py-20 text-center max-w-2xl mx-auto pt-24">
