@@ -7,33 +7,50 @@ const WA_URL = "https://wa.me/77071846970?text=Здравствуйте!%20Хо�
 
 const Hero = () => {
   const { t } = useLang();
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoLoaded, setVideoLoaded] = useState(false);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+  const [desktopLoaded, setDesktopLoaded] = useState(false);
+  const [mobileLoaded, setMobileLoaded] = useState(false);
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
-      {/* Fallback image (visible until video loads) */}
+      {/* Fallback image */}
       <div className="absolute inset-0">
         <img
           src={heroBg}
           alt="Перетяжка салона"
-          className={`w-full h-full object-cover transition-opacity duration-700 ${videoLoaded ? "opacity-0" : "opacity-100"}`}
+          className={`w-full h-full object-cover transition-opacity duration-700 ${desktopLoaded || mobileLoaded ? "opacity-0" : "opacity-100"}`}
         />
       </div>
 
-      {/* Video background */}
+      {/* Desktop video (hidden on mobile) */}
       <video
-        ref={videoRef}
+        ref={desktopVideoRef}
         autoPlay
         loop
         muted
         playsInline
         preload="auto"
-        onCanPlay={() => setVideoLoaded(true)}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 object-center md:object-center max-md:object-[center_40%] max-md:scale-[1.15] ${videoLoaded ? "opacity-100" : "opacity-0"}`}
+        onCanPlay={() => setDesktopLoaded(true)}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 hidden md:block ${desktopLoaded ? "opacity-100" : "opacity-0"}`}
         poster={heroBg}
       >
         <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+
+      {/* Mobile video (hidden on desktop) */}
+      <video
+        ref={mobileVideoRef}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        onCanPlay={() => setMobileLoaded(true)}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 block md:hidden ${mobileLoaded ? "opacity-100" : "opacity-0"}`}
+        poster={heroBg}
+      >
+        <source src="/hero-video-vertical.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay */}
