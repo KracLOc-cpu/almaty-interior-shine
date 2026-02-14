@@ -11,15 +11,15 @@ const Hero = () => {
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroBg} alt="Перетяжка салона" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-background/[0.65]" />
       </div>
 
       <div className="relative z-10 container px-5 py-20 text-center max-w-2xl mx-auto pt-24">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-5 text-foreground">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-5 text-foreground">
           {t("hero_title")}
         </h1>
 
-        <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-foreground/80 mb-8 leading-relaxed whitespace-pre-line">
           {t("hero_subtitle")}
         </p>
 
@@ -28,14 +28,14 @@ const Hero = () => {
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2.5 bg-whatsapp hover:bg-whatsapp-hover text-primary-foreground font-bold text-lg px-8 py-4 rounded-xl transition-all duration-200 active:scale-95"
+            className="inline-flex items-center justify-center gap-2.5 bg-whatsapp hover:bg-whatsapp-hover text-primary-foreground font-bold text-lg px-8 py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-[0_0_20px_hsl(var(--whatsapp)/0.35)] hover:shadow-[0_0_28px_hsl(var(--whatsapp)/0.5)]"
           >
             <MessageCircle className="w-5 h-5" />
             {t("hero_wa")}
           </a>
           <a
             href="tel:+77071846970"
-            className="inline-flex items-center justify-center gap-2.5 border-2 border-foreground/20 text-foreground font-semibold text-lg px-8 py-4 rounded-xl hover:bg-foreground/5 transition-all duration-200 active:scale-95"
+            className="inline-flex items-center justify-center gap-2.5 border-2 border-foreground/30 text-foreground font-semibold text-lg px-8 py-4 rounded-xl hover:bg-foreground/10 transition-all duration-200 active:scale-95"
           >
             <Phone className="w-5 h-5" />
             {t("hero_call")}

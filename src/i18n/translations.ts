@@ -3,8 +3,8 @@ export type Lang = "ru" | "kz" | "en";
 export const translations: Record<Lang, Record<string, string>> = {
   ru: {
     // Hero
-    hero_title: "Перетяжка салонов и мебели в Алматы",
-    hero_subtitle: "Полный салон • Сиденья • Карты дверей • Диваны и кресла • Замена поролона • Оценка по фото за 10 минут",
+    hero_title: "Салон и мебель как новые за 1–2 дня",
+    hero_subtitle: "Перетяжка • Восстановление формы • Замена поролона\nАккуратно • Без переплаты • Оценка по фото за 10 минут",
     hero_wa: "Написать в WhatsApp",
     hero_call: "Позвонить",
     hero_info: "Жумабаева 192 • Без выходных • 10:00–22:00 • Выезд и доставка",
@@ -77,8 +77,8 @@ export const translations: Record<Lang, Record<string, string>> = {
   },
 
   kz: {
-    hero_title: "Алматыда салон мен жиһаз қайта тартуы",
-    hero_subtitle: "Толық салон • Отырғыштар • Есік карталары • Дивандар мен креслолар • Көбік ауыстыру • 10 минутта фото бойынша баға",
+    hero_title: "Салон мен жиһаз 1–2 күнде жаңадай",
+    hero_subtitle: "Қайта тарту • Пішінді қалпына келтіру • Көбік ауыстыру\nУқыпты • Артық төлемсіз • 10 минутта фото бойынша баға",
     hero_wa: "WhatsApp-қа жазу",
     hero_call: "Қоңырау шалу",
     hero_info: "Жұмабаева 192 • Демалыссыз • 10:00–22:00 • Шығу және жеткізу",
@@ -142,8 +142,8 @@ export const translations: Record<Lang, Record<string, string>> = {
   },
 
   en: {
-    hero_title: "Premium Car Interior & Furniture Upholstery in Almaty",
-    hero_subtitle: "Full interior • Seats • Door panels • Sofas & chairs • Foam replacement • Photo estimate in 10 minutes",
+    hero_title: "Interior & Furniture Like New in 1–2 Days",
+    hero_subtitle: "Upholstery • Shape Restoration • Foam Replacement\nNeat work • No overpaying • Photo estimate in 10 minutes",
     hero_wa: "Message on WhatsApp",
     hero_call: "Call us",
     hero_info: "Zhumabayeva 192 • Open daily • 10:00–22:00 • Pickup & delivery",
