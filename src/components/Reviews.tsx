@@ -64,7 +64,7 @@ const Reviews = () => {
     pauseUntil.current = Date.now() + 8000;
   }, []);
 
-  // Auto-play with delayed start
+  // Auto-play with delayed start after mount
   useEffect(() => {
     const startTimeout = setTimeout(() => {
       const id = setInterval(() => {
