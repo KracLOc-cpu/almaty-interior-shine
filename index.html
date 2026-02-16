@@ -13,6 +13,21 @@
       gtag('config', 'AW-17955271726');
     </script>
 
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17955271726/r8t7CLGir_kbEK7o3vFC',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
     <title>Перетяжка автосалона и мебели в Алматы — фото до/после</title>
     <meta name="description" content="Премиальная перетяжка салонов авто и мебели в Алматы. Полный салон, сиденья, карты дверей, диваны, замена поролона. Оценка по фото за 10 минут. Жумабаева 192." />
     <meta name="author" content="Перетяжка Алматы" />
