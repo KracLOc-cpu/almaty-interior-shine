@@ -7,6 +7,7 @@ const FloatingWhatsApp = () => (
     href={WA_URL}
     target="_blank"
     rel="noopener noreferrer"
+    onClick={() => { (window as any).gtag_report_conversion?.('https://api.whatsapp.com/send/?phone=77071846970'); }}
     className="fixed bottom-5 right-5 z-50 w-14 h-14 bg-whatsapp rounded-full flex items-center justify-center shadow-lg animate-pulse-glow hover:bg-whatsapp-hover transition-colors active:scale-90"
     aria-label="WhatsApp"
   >
