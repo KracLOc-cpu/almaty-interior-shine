@@ -15,16 +15,14 @@
 
     <script>
     function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
       gtag('event', 'conversion', {
-          'send_to': 'AW-17955271726/r8t7CLGir_kbEK7o3vFC',
-          'event_callback': callback
+          'send_to': 'AW-17955271726/r8t7CLGir_kbEK7o3vFC'
       });
-      return false;
+      if (typeof url !== 'undefined') {
+        setTimeout(function() {
+          window.location = url;
+        }, 200);
+      }
     }
     </script>
 

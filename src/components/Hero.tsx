@@ -72,7 +72,7 @@ const Hero = () => {
               href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => { (window as any).gtag_report_conversion?.('https://api.whatsapp.com/send/?phone=77071846970'); }}
+              onClick={(e) => { e.preventDefault(); (window as any).gtag_report_conversion?.('https://api.whatsapp.com/send/?phone=77071846970'); }}
               className="inline-flex items-center justify-center gap-2.5 bg-whatsapp hover:bg-whatsapp-hover text-primary-foreground font-bold text-lg px-8 py-4 rounded-xl transition-all duration-200 active:scale-95 shadow-[0_0_20px_hsl(var(--whatsapp)/0.35)] hover:shadow-[0_0_28px_hsl(var(--whatsapp)/0.5)]"
             >
               <MessageCircle className="w-5 h-5" />
@@ -80,7 +80,7 @@ const Hero = () => {
             </a>
             <a
               href="tel:+77071846970"
-              onClick={() => { (window as any).gtag_report_conversion?.('tel:+77071846970'); }}
+              onClick={(e) => { e.preventDefault(); (window as any).gtag_report_conversion?.('tel:+77071846970'); }}
               className="inline-flex items-center justify-center gap-2.5 border-2 border-foreground/30 text-foreground font-semibold text-lg px-8 py-4 rounded-xl hover:bg-foreground/10 transition-all duration-200 active:scale-95"
             >
               <Phone className="w-5 h-5" />

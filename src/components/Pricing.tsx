@@ -15,7 +15,7 @@ const Pricing = () => {
           href={WA_URL}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => { (window as any).gtag_report_conversion?.('https://api.whatsapp.com/send/?phone=77071846970'); }}
+          onClick={(e) => { e.preventDefault(); (window as any).gtag_report_conversion?.('https://api.whatsapp.com/send/?phone=77071846970'); }}
           className="inline-flex items-center justify-center gap-2.5 bg-whatsapp hover:bg-whatsapp-hover text-primary-foreground font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 active:scale-95"
         >
           <Camera className="w-5 h-5" />
